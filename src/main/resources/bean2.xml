@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="test_new" class="com.example.demo.dao.test_New">
+    <property name="userDao">
+        <bean id="userDao" class="com.example.demo.dao.UserDao">
+            <property name="wide" value="wide_bean"></property>
+        </bean>
+    </property>
+    <property name="userDao.wide" value="Go on"></property>
+</bean>
+<!--    <bean id="userDao" class="com.example.demo.dao.UserDao">-->
+<!--        <property name="wide" value="forget"></property>-->
+<!--    </bean>-->
+</beans>
