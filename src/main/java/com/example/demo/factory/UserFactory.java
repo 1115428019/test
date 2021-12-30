@@ -1,21 +1,14 @@
 package com.example.demo.factory;
 
 import com.example.demo.dao.UserDao;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import static java.lang.Class.forName;
 
 public class UserFactory {
-    public  static UserDao getUserDao() throws ClassNotFoundException {
-        String ljy_s_bdz = "com.example.demo.dao.UserDao";
-        Class test = forName(ljy_s_bdz);
-        try {
-            return (UserDao)test.newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public  static  UserDao getUserDao() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
+        UserDao uu = context.getBean("ljy_s_bdz",UserDao.class);
+        return uu;
     }
-
 }

@@ -9,13 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
     public void addUser(){
         System.out.println("Demo.addUser");
-        UserDao userDao = null;
-        try {
-            userDao = UserFactory.getUserDao();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        UserDao userDao = UserFactory.getUserDao();
         userDao.addUser();
+        userDao.show();
     }
     public static void main(String[] args) {
         new DemoApplication().addUser();
