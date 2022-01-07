@@ -1,9 +1,10 @@
 package com.example.demo.model;
 
-import org.springframework.stereotype.Component;
+import lombok.Data;
 
-@Component
+@Data
 public class TestModel {
+    private long id;
     private int weight;
     private int height;
     private String name;
@@ -39,5 +40,16 @@ public class TestModel {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "TestModel{" +
+                "id=" + id +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
