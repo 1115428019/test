@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>标准变量表达式</h1>
+用户名<span th:text="${testModel.name}"></span><br/>
+身高<span th:text="${testModel.height}"></span><br/>
+体重<span th:text="${testModel.weight}"></span><br/>
+<h1>选择变量表达式</h1>
+<div th:object="${testModel}">
+用户名<span th:text="*{name}"></span><br/>
+身高<span th:text="*{height}"></span><br/>
+体重<span th:text="*{weight}"></span><br/>
+</div>
+<h1>标准变量表达式与选择变量表达式的混合使用</h1>
+用户名<span th:text="*{testModel.name}"></span><br/>
+身高<span th:text="*{testModel.height}"></span><br/>
+体重<span th:text="*{testModel.weight}"></span><br/>
+</body>
+</html>
